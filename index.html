@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salone Health Watch — Digital Health Awareness System</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Skip navigation link for screen readers / keyboard users -->
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="nav-wrap">
+    <div class="logo">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F7F3E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 12h4l2 8 4-16 2 8h6"/>
+        </svg>
+      </span>
+      <span>Salone Health Watch</span>
+    </div>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#topics">Topics</a></li>
+        <li><a href="#checker">Symptom Guide</a></li>
+        <li><a href="#rights">Your Rights</a></li>
+        <li><a href="#sdgs">Goals</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== TICKER / ALERT BAND ===== -->
+<div class="ticker" aria-label="Health alerts ticker">
+  <div class="ticker-track">
+    <span>RAINY SEASON: MALARIA CASES RISE — SLEEP UNDER TREATED NETS</span>
+    <span>BOIL OR TREAT DRINKING WATER TO PREVENT CHOLERA</span>
+    <span>FREE UNDER-5 VACCINATIONS AT YOUR NEAREST PHU</span>
+    <span>ANTENATAL CARE: VISIT A CLINIC EARLY IN PREGNANCY</span>
+    <span>WASH HANDS WITH SOAP AT KEY TIMES TO STOP DISEASE SPREAD</span>
+    <!-- Duplicate set for seamless infinite scroll animation -->
+    <span>RAINY SEASON: MALARIA CASES RISE — SLEEP UNDER TREATED NETS</span>
+    <span>BOIL OR TREAT DRINKING WATER TO PREVENT CHOLERA</span>
+    <span>FREE UNDER-5 VACCINATIONS AT YOUR NEAREST PHU</span>
+    <span>ANTENATAL CARE: VISIT A CLINIC EARLY IN PREGNANCY</span>
+    <span>WASH HANDS WITH SOAP AT KEY TIMES TO STOP DISEASE SPREAD</span>
+  </div>
+</div>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main id="main">
+
+  <!-- 00 / HERO -->
+  <section class="hero">
+    <div>
+      <span class="eyebrow">Community Health · Sierra Leone</span>
+      <h1>Know it.<br>Spot it.<br><span class="accent">Act on it.</span></h1>
+      <p class="lede">
+        Salone Health Watch is a free, open digital tool that helps communities recognise
+        common illness signs early, learn prevention steps, and understand their rights to
+        health information and privacy — built as a Digital Public Good under an open-source licence.
+      </p>
+      <div class="hero-actions">
+        <a href="#checker" class="btn btn-primary">Check symptoms</a>
+        <a href="#topics"  class="btn btn-secondary">Browse health topics</a>
+      </div>
+    </div>
+
+    <!-- Decorative animated SVG: ECG pulse line over Sierra Leone city markers -->
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
+        <circle class="dot" cx="80"  cy="320" r="6"/>
+        <circle class="dot" cx="320" cy="90"  r="6"/>
+        <circle class="dot" cx="210" cy="250" r="6"/>
+        <text class="label" x="92"  y="324">FREETOWN</text>
+        <text class="label" x="220" y="254">BO</text>
+        <text class="label" x="332" y="94">KENEMA</text>
+        <path class="pulse-line" d="M20 200 L100 200 L120 120 L150 280 L180 60 L210 200 L380 200"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 01 / HEALTH TOPICS -->
+  <section id="topics">
+    <div class="section-head">
+      <div>
+        <h2>Health topics</h2>
+        <p class="section-sub">
+          Plain-language guidance on the conditions affecting communities across Sierra Leone,
+          drawn from public health guidance.
+        </p>
+      </div>
+      <span class="num mono">01 / TOPICS</span>
+    </div>
+
+    <div class="topics-grid">
+
+      <!-- Malaria -->
+      <div class="topic-card">
+        <span class="topic-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2v6M12 16v6M2 12h6M16 12h6" stroke-linecap="round"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </span>
+        <h3>Malaria</h3>
+        <p>Spread by mosquito bites, common in the rainy season. Early signs include fever, chills,
+           headache and body aches. Sleeping under a treated net and clearing standing water helps prevent it.</p>
+        <span class="topic-tag">SDG 3</span>
+      </div>
+
+      <!-- Cholera & Water Safety -->
+      <div class="topic-card">
+        <span class="topic-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2C8 8 5 12 5 16a7 7 0 0014 0c0-4-3-8-7-14z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <h3>Cholera &amp; water safety</h3>
+        <p>Caused by unsafe drinking water and poor sanitation. Watery diarrhoea and vomiting are danger
+           signs. Boil or chlorinate water, wash hands often, and seek care quickly to avoid dehydration.</p>
+        <span class="topic-tag">SDG 6</span>
+      </div>
+
+      <!-- Maternal & Child Health -->
+      <div class="topic-card">
+        <span class="topic-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 21s-7-4.5-7-10a5 5 0 0110-1 5 5 0 0110 1c0 5.5-7 10-7 10z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <h3>Maternal &amp; child health</h3>
+        <p>Regular antenatal visits, skilled birth attendance, and full childhood vaccination protect mothers
+           and babies. Visit your nearest Peripheral Health Unit (PHU) for free maternal and under-5 services.</p>
+        <span class="topic-tag">SDG 3</span>
+      </div>
+
+      <!-- Immunisation -->
+      <div class="topic-card">
+        <span class="topic-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 11c-2 0-3.5-1.5-3.5-3.5S10 4 12 4s3.5 1.5 3.5 3.5S14 11 12 11zM5 21c0-3.5 3-6 7-6s7 2.5 7 6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <h3>Immunisation</h3>
+        <p>Vaccines protect children against measles, polio, tetanus, and more. Keep your child's health
+           card up to date and attend every scheduled visit — vaccination is free at government health facilities.</p>
+        <span class="topic-tag">SDG 3</span>
+      </div>
+
+      <!-- Hygiene & Sanitation -->
+      <div class="topic-card">
+        <span class="topic-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 12a8 8 0 0114-5M20 12a8 8 0 01-14 5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18 4v3h-3M6 20v-3h3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <h3>Hygiene &amp; sanitation</h3>
+        <p>Handwashing with soap at key moments — before eating, after the toilet, after handling waste —
+           is one of the cheapest ways to stop the spread of diarrhoeal disease and respiratory infections.</p>
+        <span class="topic-tag">SDG 6</span>
+      </div>
+
+      <!-- Outbreak Alerts -->
+      <div class="topic-card">
+        <span class="topic-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 8v4l3 3" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="9"/>
+          </svg>
+        </span>
+        <h3>Outbreak alerts</h3>
+        <p>Stay informed about disease outbreaks reported by district health teams. If you notice many people
+           in your area falling ill with similar symptoms, report it to your nearest health facility.</p>
+        <span class="topic-tag">SDG 3</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 02 / SYMPTOM CHECKER -->
+  <section id="checker">
+    <div class="section-head">
+      <div>
+        <h2>Symptom guide</h2>
+        <p class="section-sub">
+          Select what you or someone you're caring for is experiencing. This tool gives general
+          guidance only — it does not replace a visit to a health worker.
+        </p>
+      </div>
+      <span class="num mono">02 / GUIDE</span>
+    </div>
+
+    <div class="checker">
+      <div class="checker-grid">
+
+        <!-- Left column: checklist -->
+        <div>
+          <h2>Tell us what you notice</h2>
+          <p class="section-sub">Tick all the signs that apply right now.</p>
+
+          <form class="checklist" id="symptom-form">
+            <label><input type="checkbox" name="symptom" value="fever">      Fever or feeling hot/cold in waves</label>
+            <label><input type="checkbox" name="symptom" value="diarrhoea">  Watery diarrhoea</label>
+            <label><input type="checkbox" name="symptom" value="vomiting">   Repeated vomiting</label>
+            <label><input type="checkbox" name="symptom" value="headache">   Severe headache or body aches</label>
+            <label><input type="checkbox" name="symptom" value="dehydration">Sunken eyes, very little urine, or extreme thirst</label>
+            <label><input type="checkbox" name="symptom" value="rash">       Skin rash with fever</label>
+            <label><input type="checkbox" name="symptom" value="breathing">  Difficulty breathing or fast breathing</label>
+            <label><input type="checkbox" name="symptom" value="pregnancy">  Currently pregnant</label>
+          </form>
+        </div>
+
+        <!-- Right column: result panel (updated by JavaScript) -->
+        <div class="result-panel" id="result-panel" aria-live="polite">
+          <span class="result-status status-low" id="result-status">No symptoms selected</span>
+          <h3 id="result-title">Select symptoms to see guidance</h3>
+          <ul class="result-list" id="result-list">
+            <li>Guidance will appear here based on what you select.</li>
+          </ul>
+          <p class="disclaimer">
+            This tool offers general health information only and is not a diagnosis. If symptoms
+            are severe or you are unsure, go to your nearest health facility immediately.
+            In an emergency, seek urgent care right away.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 / YOUR RIGHTS & LICENCE -->
+  <section id="rights" class="rights-section">
+    <div class="section-head">
+      <div>
+        <h2>Your rights &amp; this tool's licence</h2>
+        <p class="section-sub">
+          How this Digital Public Good handles your data, and the open terms it is shared under.
+        </p>
+      </div>
+      <span class="num mono">03 / LEGAL</span>
+    </div>
+
+    <div class="rights-grid">
+      <div class="rights-item">
+        <h3>No personal data collected</h3>
+        <p>The symptom guide runs entirely in your browser. Nothing you select is sent to a server,
+           stored, or shared with any third party.</p>
+      </div>
+      <div class="rights-item">
+        <h3>Open-source licence (MIT)</h3>
+        <p>This tool is released under the MIT License. Anyone may use, copy, modify, and share it —
+           including health organisations, schools, and developers — provided the original copyright
+           notice is kept.</p>
+      </div>
+      <div class="rights-item">
+        <h3>Open data formats</h3>
+        <p>Health topic content is structured for easy reuse in JSON, so other organisations can
+           adapt or translate it for their own platforms.</p>
+      </div>
+      <div class="rights-item">
+        <h3>Right to accurate information</h3>
+        <p>You have the right to receive clear, factual health information. This tool avoids
+           exaggeration and is reviewed against public health guidance.</p>
+      </div>
+      <div class="rights-item">
+        <h3>Right to seek care without judgement</h3>
+        <p>Information here is provided neutrally. Seeking medical help for any symptom, including
+           reproductive and maternal health, is your right.</p>
+      </div>
+      <div class="rights-item">
+        <h3>Accessibility</h3>
+        <p>The tool is designed to be usable with a keyboard, screen reader, and on low-cost mobile
+           devices, recognising unequal access to technology.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 / SDG ALIGNMENT -->
+  <section id="sdgs">
+    <div class="section-head">
+      <div>
+        <h2>Aligned goals</h2>
+        <p class="section-sub">This project supports the following UN Sustainable Development Goals.</p>
+      </div>
+      <span class="num mono">04 / SDGS</span>
+    </div>
+
+    <div class="sdg-strip">
+      <div class="sdg-cell">
+        <span class="sdg-num">03</span>
+        <h4>Good Health &amp; Well-being</h4>
+        <p>Supports early recognition of illness and access to care information.</p>
+      </div>
+      <div class="sdg-cell">
+        <span class="sdg-num">06</span>
+        <h4>Clean Water &amp; Sanitation</h4>
+        <p>Promotes safe water practices and hygiene to prevent disease.</p>
+      </div>
+      <div class="sdg-cell">
+        <span class="sdg-num">10</span>
+        <h4>Reduced Inequalities</h4>
+        <p>Free, open-source access to health guidance regardless of income.</p>
+      </div>
+      <div class="sdg-cell">
+        <span class="sdg-num">17</span>
+        <h4>Partnerships for the Goals</h4>
+        <p>Open licensing enables reuse by NGOs, clinics, and developers.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <strong>Salone Health Watch</strong> — a Digital Public Good prototype.
+    </div>
+    <div class="mono">LICENSED UNDER MIT · BUILT FOR DLAW207 PROJECT</div>
+  </div>
+</footer>
+
+<!-- External JavaScript (loaded last so DOM is ready) -->
+<script src="script.js"></script>
+
+</body>
+</html>

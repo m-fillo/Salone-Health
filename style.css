@@ -1,0 +1,662 @@
+/* =====================================================
+   Salone Health Watch — Stylesheet
+   DLAW207 Group Project, Limkokwing University, SL
+   License: MIT
+   ===================================================== */
+
+/* ===== CSS CUSTOM PROPERTIES (DESIGN TOKENS) ===== */
+:root {
+  --teal:      #1B4D4A;
+  --teal-dark: #123533;
+  --ochre:     #E8A33D;
+  --clay:      #C1502E;
+  --ivory:     #F7F3E9;
+  --charcoal:  #2B2B2B;
+  --green-ok:  #4F7942;
+  --line:      rgba(43, 43, 43, 0.12);
+}
+
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== BASE / BODY ===== */
+body {
+  font-family: 'Work Sans', sans-serif;
+  background: var(--ivory);
+  color: var(--charcoal);
+  line-height: 1.6;
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, .display {
+  font-family: 'Archivo Black', sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
+}
+
+a {
+  color: inherit;
+}
+
+/* ===== ACCESSIBILITY: SKIP LINK ===== */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--ochre);
+  color: var(--charcoal);
+  padding: 8px 16px;
+  z-index: 100;
+}
+.skip-link:focus {
+  left: 8px;
+  top: 8px;
+}
+
+/* =====================================================
+   HEADER & NAVIGATION
+   ===================================================== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--ivory);
+  border-bottom: 2px solid var(--charcoal);
+}
+
+.nav-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.logo-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo-mark svg {
+  width: 20px;
+  height: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  border-color: var(--clay);
+}
+
+.nav-toggle {
+  display: none;
+}
+
+/* =====================================================
+   HERO SECTION
+   ===================================================== */
+.hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 24px 80px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--teal);
+  margin-bottom: 18px;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 2px;
+  background: var(--clay);
+  display: block;
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  margin-bottom: 22px;
+}
+
+.hero h1 .accent {
+  color: var(--clay);
+}
+
+.hero p.lede {
+  font-size: 1.15rem;
+  max-width: 46ch;
+  color: rgba(43, 43, 43, 0.78);
+  margin-bottom: 30px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 14px 28px;
+  border-radius: 2px;
+  border: 2px solid var(--charcoal);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.2s, color 0.2s;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: var(--teal);
+  color: var(--ivory);
+  border-color: var(--teal);
+}
+
+.btn-primary:hover {
+  background: var(--teal-dark);
+  border-color: var(--teal-dark);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--charcoal);
+}
+
+.btn-secondary:hover {
+  background: var(--charcoal);
+  color: var(--ivory);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--ochre);
+  outline-offset: 2px;
+}
+
+/* ===== HERO VISUAL: ANIMATED PULSE / MAP MOTIF ===== */
+.hero-visual {
+  aspect-ratio: 1 / 1;
+  background: var(--teal);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--charcoal);
+}
+
+.hero-visual svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.pulse-line {
+  stroke: var(--ochre);
+  stroke-width: 3;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: draw 3.5s ease-in-out infinite;
+}
+
+@keyframes draw {
+  0%   { stroke-dashoffset: 600; }
+  50%  { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -600; }
+}
+
+.hero-visual .dot  { fill: var(--clay); }
+.hero-visual .label {
+  fill: var(--ivory);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+
+/* =====================================================
+   TICKER / ALERT BAND
+   ===================================================== */
+.ticker {
+  background: var(--charcoal);
+  color: var(--ivory);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 12px 0;
+  border-bottom: 2px solid var(--charcoal);
+}
+
+.ticker-track {
+  display: inline-flex;
+  gap: 48px;
+  animation: scroll 38s linear infinite;
+  padding-left: 48px;
+}
+
+.ticker-track span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+.ticker-track span::before {
+  content: '● ';
+  color: var(--ochre);
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ===== REDUCED MOTION PREFERENCE ===== */
+@media (prefers-reduced-motion: reduce) {
+  .pulse-line,
+  .ticker-track {
+    animation: none;
+  }
+}
+
+/* =====================================================
+   SECTION SHELL
+   ===================================================== */
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 88px 24px;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+  border-bottom: 2px solid var(--charcoal);
+  padding-bottom: 24px;
+}
+
+.section-head h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.section-head .num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  color: var(--clay);
+  font-weight: 700;
+}
+
+.section-sub {
+  max-width: 50ch;
+  color: rgba(43, 43, 43, 0.75);
+  font-size: 1.02rem;
+  margin-top: 8px;
+}
+
+/* =====================================================
+   TOPIC CARDS (Health Topics Section)
+   ===================================================== */
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2px;
+  background: var(--charcoal);
+  border: 2px solid var(--charcoal);
+}
+
+.topic-card {
+  background: var(--ivory);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: background 0.2s;
+}
+
+.topic-card:hover {
+  background: #fffdf7;
+}
+
+.topic-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--teal);
+}
+
+.topic-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--ivory);
+  fill: none;
+  stroke-width: 2;
+}
+
+.topic-card h3 {
+  font-size: 1.15rem;
+  margin-top: 4px;
+}
+
+.topic-card p {
+  font-size: 0.95rem;
+  color: rgba(43, 43, 43, 0.75);
+  flex-grow: 1;
+}
+
+.topic-tag {
+  align-self: flex-start;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 5px 10px;
+  border: 1px solid var(--charcoal);
+  border-radius: 2px;
+}
+
+/* =====================================================
+   SYMPTOM CHECKER
+   ===================================================== */
+.checker {
+  background: var(--teal);
+  color: var(--ivory);
+  border-radius: 4px;
+  padding: 48px;
+  border: 2px solid var(--charcoal);
+  position: relative;
+  overflow: hidden;
+}
+
+.checker::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  border: 2px dashed rgba(247, 243, 233, 0.2);
+}
+
+.checker-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 48px;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+.checker h2 {
+  color: var(--ivory);
+  margin-bottom: 14px;
+}
+
+.checker .section-sub {
+  color: rgba(247, 243, 233, 0.8);
+}
+
+/* Checklist */
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 28px;
+}
+
+.checklist label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(247, 243, 233, 0.18);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.checklist input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  accent-color: var(--ochre);
+  cursor: pointer;
+}
+
+/* Result panel */
+.result-panel {
+  background: var(--ivory);
+  color: var(--charcoal);
+  border-radius: 4px;
+  padding: 32px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.result-panel h3 {
+  font-size: 1.3rem;
+}
+
+.result-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  border-radius: 2px;
+  align-self: flex-start;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+
+.status-low  { background: rgba(79, 121, 66, 0.15); color: var(--green-ok); }
+.status-mid  { background: rgba(232, 163, 61, 0.18); color: #8a5e10; }
+.status-high { background: rgba(193, 80, 46, 0.15); color: var(--clay); }
+
+.result-list {
+  font-size: 0.95rem;
+  color: rgba(43, 43, 43, 0.85);
+  padding-left: 20px;
+}
+
+.result-list li {
+  margin-bottom: 6px;
+}
+
+.disclaimer {
+  font-size: 0.82rem;
+  color: rgba(43, 43, 43, 0.6);
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+  margin-top: auto;
+}
+
+/* =====================================================
+   RIGHTS / LEGAL SECTION
+   ===================================================== */
+.rights-section {
+  background: var(--charcoal);
+  color: var(--ivory);
+}
+
+.rights-section .section-head {
+  border-bottom-color: rgba(247, 243, 233, 0.25);
+}
+
+.rights-section .section-sub {
+  color: rgba(247, 243, 233, 0.7);
+}
+
+.rights-section .num {
+  color: var(--ochre);
+}
+
+.rights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.rights-item {
+  border-left: 3px solid var(--ochre);
+  padding-left: 20px;
+}
+
+.rights-item h3 {
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+  text-transform: none;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 700;
+}
+
+.rights-item p {
+  font-size: 0.93rem;
+  color: rgba(247, 243, 233, 0.7);
+}
+
+/* =====================================================
+   SDG STRIP
+   ===================================================== */
+.sdg-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2px;
+  background: var(--charcoal);
+  border: 2px solid var(--charcoal);
+}
+
+.sdg-cell {
+  background: var(--ivory);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sdg-num {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 2.2rem;
+  color: var(--clay);
+  line-height: 1;
+}
+
+.sdg-cell h4 {
+  font-size: 0.95rem;
+  text-transform: none;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 700;
+}
+
+.sdg-cell p {
+  font-size: 0.85rem;
+  color: rgba(43, 43, 43, 0.7);
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+footer {
+  border-top: 2px solid var(--charcoal);
+  padding: 48px 24px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  font-size: 0.9rem;
+}
+
+.footer-inner .mono {
+  color: rgba(43, 43, 43, 0.6);
+  font-size: 0.8rem;
+}
+
+/* =====================================================
+   RESPONSIVE BREAKPOINTS
+   ===================================================== */
+@media (max-width: 900px) {
+  .hero                  { grid-template-columns: 1fr; padding-top: 40px; }
+  .hero-visual           { order: -1; max-width: 320px; margin: 0 auto; }
+  .checker-grid          { grid-template-columns: 1fr; }
+  nav ul                 { gap: 16px; }
+}
+
+@media (max-width: 640px) {
+  nav ul      { display: none; }
+  .nav-wrap   { justify-content: center; }
+  section     { padding: 56px 20px; }
+  .checker    { padding: 28px; }
+}
